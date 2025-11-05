@@ -1,0 +1,20 @@
+{
+  "59": {
+    "articulo": 59,
+    "titulo": "Competencia por razón del territorio",
+    "texto": "Será competente para conocer del proceso el tribunal del lugar donde se haya cometido la infracción. (Referencia: Ley 76-02; ver reformas 10-15 y 361-22).",
+    "fuente": "Código Procesal Penal Dominicano (Ley 76-02)"
+  },
+  "60": {
+    "articulo": 60,
+    "titulo": "Competencia por conexión",
+    "texto": "Cuando existan varios hechos punibles relacionados, conocerá el tribunal competente por el hecho más grave. (Referencia: Ley 76-02).",
+    "fuente": "Código Procesal Penal Dominicano (Ley 76-02)"
+  },
+  "61": {
+    "articulo": 61,
+    "titulo": "Incompetencia",
+    "texto": "La incompetencia puede ser declarada de oficio o a petición de parte conforme a las reglas de este código.",
+    "fuente": "Código Procesal Penal Dominicano (Ley 76-02)"
+  }
+}

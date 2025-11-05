@@ -1,0 +1,10 @@
+{
+  "name": "abogadord-api",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,213 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Abogado de RD — API Oficial",
+    "version": "1.0.0",
+    "description": "Consultas jurídicas, artículos legales y redacción de documentos procesales en tiempo real."
+  },
+  "servers": [
+    {
+      "url": "https://abogadord-api.vercel.app"
+    }
+  ],
+  "paths": {
+    "/api/codigo_procesal": {
+      "get": {
+        "summary": "Consultar artículo del Código Procesal Penal (CPP) por número",
+        "operationId": "getCPP",
+        "parameters": [
+          {
+            "name": "articulo",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Número de artículo. Ej: 59"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Artículo encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      }
+    },
+    "/api/codigo_penal": {
+      "get": {
+        "summary": "Consultar artículo del Código Penal por número",
+        "operationId": "getCP",
+        "parameters": [
+          {
+            "name": "articulo",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Número de artículo. Ej: 302"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Artículo encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No encontrado"
+          }
+        }
+      }
+    },
+    "/api/documento": {
+      "post": {
+        "summary": "Generar documento procesal (texto)",
+        "operationId": "postDocumento",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "tipo": {
+                    "type": "string"
+                  },
+                  "detalles": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "tipo"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Documento generado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/jurisprudencia": {
+      "get": {
+        "summary": "Buscar jurisprudencia por tema",
+        "operationId": "getJurisprudencia",
+        "parameters": [
+          {
+            "name": "tema",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Tema de búsqueda. Ej: violencia intrafamiliar"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resultados",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/admin_upsert": {
+      "post": {
+        "summary": "Actualizar o agregar artículos (protegido por x-api-key)",
+        "operationId": "postAdminUpsert",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "codigo": {
+                    "type": "string",
+                    "enum": [
+                      "cpp",
+                      "penal"
+                    ]
+                  },
+                  "articulo": {
+                    "type": "integer"
+                  },
+                  "titulo": {
+                    "type": "string"
+                  },
+                  "texto": {
+                    "type": "string"
+                  },
+                  "fuente": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "codigo",
+                  "articulo",
+                  "texto"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Artículo actualizado"
+          },
+          "401": {
+            "description": "No autorizado"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key"
+      }
+    }
+  }
+}
