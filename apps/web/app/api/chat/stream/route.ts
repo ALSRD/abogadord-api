@@ -70,7 +70,7 @@ const streamOpenAIResponse = async (
   const extraHeaders: Record<string, string> = {};
   if (baseUrl.includes("openrouter.ai")) {
     extraHeaders["HTTP-Referer"] = "https://abogadord-api.vercel.app";
-    extraHeaders["X-Title"] = "AbogadoRD";
+    extraHeaders["X-OpenRouter-Title"] = "AbogadoRD";
   }
 
   const response = await fetch(`${baseUrl}/chat/completions`, {
