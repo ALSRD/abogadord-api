@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background: #070a12;
+}
+
+body {
+  color: #eef2ff;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+::selection {
+  background: rgba(124, 58, 237, 0.45);
+}
+
+.premium-scrollbar {
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+  scrollbar-width: thin;
+}
+
+.markdown-pro pre {
+  margin: 0.75rem 0;
+  overflow-x: auto;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(2, 6, 23, 0.92);
+  padding: 1rem;
+  color: #dbeafe;
+}
+
+.markdown-pro :not(pre) > code {
+  border-radius: 0.45rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.1rem 0.35rem;
+  color: #bfdbfe;
+}
+
+
+.markdown-pro table {
+  min-width: 100%;
+}
+
+.markdown-pro pre code {
+  background: transparent;
+  padding: 0;
+}

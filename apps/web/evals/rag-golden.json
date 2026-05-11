@@ -1,0 +1,64 @@
+[
+  {
+    "id": "legal-reference-exact-match",
+    "query": "Qué dice el artículo 59 sobre competencia?",
+    "relevantChunkIds": ["cpp-art-59"],
+    "chunks": [
+      {
+        "id": "intro-general",
+        "documentId": "cpp",
+        "filename": "cpp.txt",
+        "pageNumber": 1,
+        "chunkIndex": 1,
+        "content": "El Código Procesal Penal regula principios generales del proceso penal dominicano."
+      },
+      {
+        "id": "cpp-art-59",
+        "documentId": "cpp",
+        "filename": "cpp.txt",
+        "pageNumber": 12,
+        "chunkIndex": 2,
+        "content": "Artículo 59. Competencia. La competencia penal se determina por el lugar donde se cometió la infracción y por las reglas establecidas en este código."
+      },
+      {
+        "id": "contract-clause",
+        "documentId": "contract",
+        "filename": "contrato.txt",
+        "pageNumber": 3,
+        "chunkIndex": 1,
+        "content": "Cláusula quinta. Las partes acuerdan obligaciones de confidencialidad comercial."
+      }
+    ]
+  },
+  {
+    "id": "contract-clause-match",
+    "query": "Dónde está la cláusula de confidencialidad?",
+    "relevantChunkIds": ["contract-confidentiality"],
+    "chunks": [
+      {
+        "id": "contract-payment",
+        "documentId": "contract",
+        "filename": "contrato.txt",
+        "pageNumber": 2,
+        "chunkIndex": 1,
+        "content": "Cláusula tercera. El pago será realizado dentro de los quince días siguientes a la factura."
+      },
+      {
+        "id": "contract-confidentiality",
+        "documentId": "contract",
+        "filename": "contrato.txt",
+        "pageNumber": 5,
+        "chunkIndex": 3,
+        "content": "Cláusula séptima. Confidencialidad. Las partes no podrán divulgar información privada, documentos, anexos ni datos sensibles del contrato."
+      },
+      {
+        "id": "penalty",
+        "documentId": "law",
+        "filename": "ley.txt",
+        "pageNumber": 9,
+        "chunkIndex": 2,
+        "content": "La responsabilidad civil se determina por el daño causado y la relación de causalidad."
+      }
+    ]
+  }
+]

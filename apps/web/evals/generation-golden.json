@@ -1,0 +1,14 @@
+[
+  {
+    "id": "grounded-answer-with-citation",
+    "answer": "Según el contrato.pdf, la confidencialidad está en la cláusula séptima [Fuente: contrato.pdf · pág. 5].",
+    "expectedCitationFiles": ["contrato.pdf"],
+    "mustContain": ["cláusula séptima", "Fuente"]
+  },
+  {
+    "id": "insufficient-evidence-disclosure",
+    "answer": "No encontré evidencia documental suficiente en los archivos cargados para responder con seguridad. Sube el contrato o indica la fuente.",
+    "expectedCitationFiles": [],
+    "mustContain": ["evidencia documental suficiente"]
+  }
+]
