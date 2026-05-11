@@ -1,0 +1,33 @@
+{
+  "name": "abogadord-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "eval:rag": "node scripts/evaluate-rag.mjs",
+    "eval:generation": "node scripts/evaluate-generation.mjs",
+    "eval:all": "npm run eval:rag && npm run eval:generation"
+  },
+  "dependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "autoprefixer": "^10.4.20",
+    "framer-motion": "^11.15.0",
+    "next": "^15.1.3",
+    "postcss": "^8.4.49",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "react-markdown": "^9.0.3",
+    "rehype-highlight": "^7.0.1",
+    "remark-gfm": "^4.0.0",
+    "@supabase/supabase-js": "^2.47.10"
+  },
+  "devDependencies": {}
+}
